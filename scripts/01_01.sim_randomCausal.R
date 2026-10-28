@@ -407,7 +407,7 @@ for(i in 1:length(gamma_vec)){
   } ## Make sure to update Egger
   
   p_x <- 2*pnorm(-abs(sim_dat$beta_hat[,1]/sim_dat$s_estimate[,1]))
-  p_y <- 2*pnorm(-abs(sim_dat$beta_hat[,1]/sim_dat$s_estimate[,1]))
+  p_y <- 2*pnorm(-abs(sim_dat$beta_hat[,2]/sim_dat$s_estimate[,2]))
   p_min <- c(p_min, min(p_x))
   
   #Add single-variant statistics to our matrix
