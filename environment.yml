@@ -1,0 +1,36 @@
+name: finemappingMR_manuscript
+channels:
+  - conda-forge
+  - bioconda
+  - nodefaults
+dependencies:
+  # workflow engine (pinned: the Snakefile refuses to run on any other version)
+  - python=3.10
+  - snakemake=7.12.1
+  - pandas=1.4.3
+  # external tools called by the workflow
+  - gcta
+  # MR-link-2 (external/mrlink2) python dependencies
+  - numpy
+  - scipy
+  - bitarray
+  - python-duckdb
+  - pyarrow
+  - rpy2
+  # R and toolchain for compiling R packages from source via renv
+  - r-base=4.4
+  - r-renv
+  - compilers
+  - make
+  - cmake
+  - pkg-config
+  - libcurl
+  - openssl
+  - libxml2
+  - libgit2
+  - gmp
+  - mpfr
+  - zlib
+  - bzip2
+  - xz
+  - git

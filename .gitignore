@@ -1,0 +1,14 @@
+# inputs and results are large and are not tracked
+00.inputs
+01.sim_resampled/
+logs/
+.snakemake/
+external/
+# renv
+renv/library/
+renv/staging/
+renv/local/
+.Rproj.user/
+.Rhistory
+.RData
+Rplots.pdf

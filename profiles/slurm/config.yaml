@@ -1,0 +1,27 @@
+cluster:
+  mkdir -p logs/{rule} &&
+  sbatch
+    --partition={resources.partition}
+    --exclude=dl3602,dl3605,dl3612,dl3613,hunt-mc11,r6307,r6327,r6331,r6332
+    --cpus-per-task={threads}
+    --mem={resources.mem_mb}
+    --job-name=smk-{rule}-{wildcards}
+    --time={resources.time}
+    --output=logs/{rule}/{rule}-{wildcards}-%j.out
+    --parsable
+default-resources:
+  - partition=main
+  - mem_mb=50000
+  - disk_mb=1000
+  - time="24:00:00"
+restart-times: 2
+max-jobs-per-second: 10
+max-status-checks-per-second: 1
+local-cores: 20
+latency-wait: 60
+jobs: 800
+keep-going: True
+rerun-incomplete: True
+printshellcmds: True
+scheduler: greedy
+cluster-status: profiles/slurm/status-sacct.sh
