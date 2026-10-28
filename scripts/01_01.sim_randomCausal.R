@@ -593,7 +593,7 @@ for(i in 1:length(gamma_vec)){
   
 
   #Now call our finemappingMR function
-  res_ourMeth <- tryCatch(expr = run_bayes_method_ss(exposure_xtx, exposure_xty, exposure_yty,
+  res_ourMeth <- tryCatch(expr = finemappingMR_suff_stats(exposure_xtx, exposure_xty, exposure_yty,
                                                      outcome_xtx, outcome_xty, outcome_yty,
                                                      N_exposure, N_outcome,
                                                      L_x = 10, L_y = 10,
